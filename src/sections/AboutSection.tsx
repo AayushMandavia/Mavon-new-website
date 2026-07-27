@@ -3,7 +3,7 @@ import { AnimatedText } from '../components/AnimatedText';
 import { ContactButton } from '../components/Buttons';
 
 export const AboutSection = () => {
-  const text = "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
+  const text = "With more than five years of experience in design, we focus on branding, web design, and user experience. We truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
 
   return (
     <section id="about" aria-labelledby="about-heading" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 select-none">
@@ -80,7 +80,7 @@ export const AboutSection = () => {
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >
-            About me
+            About us
           </h2>
         </FadeIn>
 
