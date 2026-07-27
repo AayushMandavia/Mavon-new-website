@@ -115,8 +115,8 @@ const ProjectCard = ({
 
         {/* Bottom Row */}
         <div className="grid grid-cols-1 md:grid-cols-10 gap-4 sm:gap-6 w-full flex-grow overflow-hidden min-h-0">
-          {/* Left Column (40% width / 4 cols) */}
-          <div className="md:col-span-4 flex flex-col gap-4 sm:gap-6 justify-between h-full min-h-0">
+          {/* Left Column (40% width / 4 cols) - Hidden on mobile, visible on desktop */}
+          <div className="hidden md:flex md:col-span-4 flex-col gap-4 sm:gap-6 justify-between h-full min-h-0">
             <img 
               src={project.img1} 
               alt={`${project.name} preview 1`} 
@@ -131,8 +131,8 @@ const ProjectCard = ({
             />
           </div>
 
-          {/* Right Column (60% width / 6 cols) */}
-          <div className="md:col-span-6 flex h-full min-h-0">
+          {/* Right Column (60% width / 6 cols) - Full width on mobile */}
+          <div className="col-span-1 md:col-span-6 flex h-full min-h-0">
             <img 
               src={project.img3} 
               alt={`${project.name} main preview`} 
