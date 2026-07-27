@@ -38,10 +38,13 @@ export const HeroSection = () => {
                 mavon
               </h1>
               <div 
-                style={{ textAlignLast: 'justify' }}
-                className="w-full uppercase text-[#D7E2EA] font-semibold tracking-wider text-[2vw] sm:text-[2.2vw] md:text-[2.4vw] lg:text-[2.6vw] leading-none mt-2 sm:mt-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+                className="w-full flex justify-between uppercase text-[#D7E2EA] font-semibold text-[1.4vw] sm:text-[1.6vw] md:text-[1.8vw] lg:text-[2vw] leading-none mt-3 sm:mt-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
               >
-                Get your Custom tailored designs
+                {"Get your Custom tailored designs".split("").map((char, index) => (
+                  <span key={index} className={char === " " ? "w-[1.2vw] sm:w-[1.4vw] md:w-[1.6vw]" : ""}>
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
               </div>
             </div>
           </FadeIn>
