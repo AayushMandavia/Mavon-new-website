@@ -31,11 +31,19 @@ export const HeroSection = () => {
           {/* Subtle edge fade only so the center icon is unobstructed and bright */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0C0C0C]/30 via-transparent to-[#0C0C0C]/30 pointer-events-none" />
 
-          {/* Text: Hi, i'm mavon (sized 8.5vw-10vw so all 13 characters including N fit within any screen) */}
-          <FadeIn y={40} delay={0.15} duration={0.8} className="relative z-10 w-full px-2">
-            <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[8.5vw] sm:text-[9vw] md:text-[9.5vw] lg:text-[10vw] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
-              Hi, i&apos;m mavon
-            </h1>
+          {/* Text: Mavon + Justified Tagline */}
+          <FadeIn y={40} delay={0.15} duration={0.8} className="relative z-10 w-full px-4 flex flex-col items-center justify-center">
+            <div className="w-fit flex flex-col items-stretch text-center select-none">
+              <h1 className="hero-heading font-black uppercase tracking-tight leading-none text-[15vw] sm:text-[16vw] md:text-[17.5vw] lg:text-[19vw] drop-shadow-[0_4px_24px_rgba(0,0,0,0.85)]">
+                mavon
+              </h1>
+              <div 
+                style={{ textAlignLast: 'justify' }}
+                className="w-full uppercase text-[#D7E2EA] font-semibold tracking-wider text-[2vw] sm:text-[2.2vw] md:text-[2.4vw] lg:text-[2.6vw] leading-none mt-2 sm:mt-3 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              >
+                Get your Custom tailored designs
+              </div>
+            </div>
           </FadeIn>
         </div>
       </div>
