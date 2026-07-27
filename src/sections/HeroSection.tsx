@@ -4,12 +4,16 @@ export const HeroSection = () => {
   return (
     <section className="relative flex flex-col justify-start overflow-hidden bg-[#0C0C0C] pb-2 sm:pb-4 md:pb-6">
       {/* Navbar */}
-      <FadeIn y={-20} delay={0} className="w-full flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8 z-20">
-        <a href="#about" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">About</a>
-        <a href="#services" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">Services</a>
-        <a href="#projects" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">Projects</a>
-        <a href="#contact" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">Contact</a>
-      </FadeIn>
+      <header>
+        <FadeIn y={-20} delay={0} className="w-full flex justify-between items-center px-6 md:px-10 pt-6 md:pt-8 z-20">
+          <nav aria-label="Main navigation" className="w-full flex justify-between items-center">
+            <a href="#about" aria-label="Navigate to About section" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">About</a>
+            <a href="#services" aria-label="Navigate to Services section" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">Services</a>
+            <a href="#projects" aria-label="Navigate to Projects section" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">Projects</a>
+            <a href="#contact" aria-label="Navigate to Contact section" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">Contact</a>
+          </nav>
+        </FadeIn>
+      </header>
 
       {/* Hero Heading with Looping Background Animation */}
       <div className="relative w-full overflow-visible text-center select-none z-0 mt-6 sm:mt-10 md:mt-12 mb-2 sm:mb-4 flex flex-col items-center justify-center px-4 sm:px-8">
@@ -21,6 +25,7 @@ export const HeroSection = () => {
             loop
             muted
             playsInline
+            aria-label="Hero background animation"
             className="absolute inset-0 w-full h-full object-cover opacity-100 brightness-110 contrast-110"
           />
           {/* Subtle edge fade only so the center icon is unobstructed and bright */}

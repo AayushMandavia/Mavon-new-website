@@ -6,7 +6,7 @@ export const AboutSection = () => {
   const text = "With experience in design, we focus on automations, web design, and user experience. We truly enjoy working with businesses that aim to stand out and present their best. Let's build something incredible together!";
 
   return (
-    <section id="about" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 select-none">
+    <section id="about" aria-labelledby="about-heading" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 select-none">
       
       {/* Corner Decorative Assets */}
       
@@ -76,6 +76,7 @@ export const AboutSection = () => {
         {/* Heading */}
         <FadeIn y={40} delay={0} duration={0.7}>
           <h2 
+            id="about-heading"
             className="hero-heading font-black uppercase leading-none tracking-tight text-center"
             style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
           >

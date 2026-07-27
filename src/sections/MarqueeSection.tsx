@@ -53,6 +53,7 @@ export const MarqueeSection = () => {
   return (
     <section 
       ref={sectionRef} 
+      aria-label="Portfolio showcase"
       className="bg-[#0C0C0C] pt-2 sm:pt-4 md:pt-6 pb-8 sm:pb-10 overflow-hidden flex flex-col gap-2 sm:gap-3 md:gap-4"
     >
       {/* Row 1 - Moves RIGHT */}

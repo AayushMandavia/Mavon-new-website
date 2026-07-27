@@ -2,8 +2,10 @@ import { FadeIn } from '../components/FadeIn';
 
 export const ContactSection = () => {
   return (
+    <footer>
     <section 
       id="contact" 
+      aria-labelledby="contact-heading"
       className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-[#0C0C0C] px-5 sm:px-8 md:px-10 py-20 border-t border-[#D7E2EA]/10 select-none"
     >
       {/* 4 Decorative Corner Assets */}
@@ -71,7 +73,7 @@ export const ContactSection = () => {
       {/* Center Content */}
       <div className="relative z-10 max-w-4xl w-full mx-auto flex flex-col items-center text-center gap-12">
         <FadeIn y={30} delay={0}>
-          <h2 className="hero-heading font-black uppercase tracking-tight text-[10vw] sm:text-[8vw] md:text-[6vw] leading-none">
+          <h2 id="contact-heading" className="hero-heading font-black uppercase tracking-tight text-[10vw] sm:text-[8vw] md:text-[6vw] leading-none">
             Contact Us
           </h2>
         </FadeIn>
@@ -115,5 +117,6 @@ export const ContactSection = () => {
         </FadeIn>
       </div>
     </section>
+    </footer>
   );
 };

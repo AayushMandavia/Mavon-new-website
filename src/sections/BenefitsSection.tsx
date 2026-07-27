@@ -2,11 +2,12 @@ import React from 'react';
 
 export const BenefitsSection: React.FC = () => {
   return (
-    <section className="w-full bg-black flex justify-center font-futura">
+    <section aria-labelledby="benefits-heading" className="w-full bg-black flex justify-center font-futura">
       <div className="w-full max-w-[1400px]">
         <div className="relative w-full bg-black px-4 sm:px-6 md:px-10 py-12 sm:py-20">
           {/* Section Heading */}
           <h2
+            id="benefits-heading"
             className="text-white text-3xl sm:text-4xl md:text-5xl font-light text-center mb-12 sm:mb-24"
             style={{ letterSpacing: '-0.04em' }}
           >
@@ -44,6 +45,7 @@ export const BenefitsSection: React.FC = () => {
                   loop
                   muted
                   playsInline
+                  aria-label="Key benefits animation"
                   className="w-full h-full object-cover block"
                 />
                 {/* Bottom fade overlay inside video wrapper */}

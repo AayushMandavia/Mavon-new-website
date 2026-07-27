@@ -142,11 +142,13 @@ export const ProjectsSection = () => {
   return (
     <section 
       id="projects" 
+      aria-labelledby="projects-heading"
       className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pb-32 pt-20 relative z-10 -mt-10 sm:-mt-12 md:-mt-14"
     >
       {/* Heading */}
       <FadeIn y={40} delay={0} className="w-full text-center mb-16 sm:mb-20 md:mb-28">
         <h2 
+          id="projects-heading"
           className="hero-heading font-black uppercase leading-none tracking-tight text-center"
           style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
         >
