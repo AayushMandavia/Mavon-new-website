@@ -95,7 +95,7 @@ const ProjectCard = ({
               </h3>
             </div>
           </div>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+          <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3 ml-auto">
             {project.links ? (
               project.links.map((link: string, idx: number) => (
                 <RainbowButton

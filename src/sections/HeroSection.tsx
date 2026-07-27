@@ -1,6 +1,18 @@
+import { useRef, useEffect } from 'react';
 import { FadeIn } from '../components/FadeIn';
 
 export const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(error => {
+        console.error("Autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative flex flex-col justify-start overflow-hidden bg-[#0C0C0C] pb-2 sm:pb-4 md:pb-6">
       {/* Navbar */}
@@ -20,6 +32,7 @@ export const HeroSection = () => {
         <div className="relative w-full max-w-[96vw] h-[320px] sm:h-[450px] md:h-[550px] lg:h-[650px] mx-auto rounded-3xl overflow-hidden flex items-center justify-center my-4">
           {/* Video Animation - 100% opacity & brightened to make background icon clearly visible */}
           <video
+            ref={videoRef}
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260421_072701_f6a01abb-eb30-4559-9d6e-774362defbc3.mp4"
             autoPlay
             loop
