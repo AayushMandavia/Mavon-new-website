@@ -1,6 +1,6 @@
-# Jack — 3D Creator Portfolio Landing Page 🚀
+# Mavon 🚀
 
-Welcome to the official repository for **Jack's 3D Creator Portfolio Landing Page**. This is a high-performance, visually stunning, dark-themed portfolio application custom-tailored for 3D designers, motion artists, and creators.
+Welcome to the official repository for *Mavon Online**. This is a high-performance, visually stunning, dark-themed website  custom-tailored for 3D designers, motion artists, and creators.
 
 Built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, the design is optimized to provide an immersive, buttery-smooth storytelling experience for visitors.
 
