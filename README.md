@@ -1,46 +1,84 @@
-# Mavon Website 2.0
+# Jack — 3D Creator Portfolio Landing Page 🚀
 
-A premium, modern web application built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**, featuring dynamic micro-animations, glassmorphism aesthetics, and responsive design.
+Welcome to the official repository for **Jack's 3D Creator Portfolio Landing Page**. This is a high-performance, visually stunning, dark-themed portfolio application custom-tailored for 3D designers, motion artists, and creators.
 
-## 📸 Hero Section Preview
+Built with **React**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**, the design is optimized to provide an immersive, buttery-smooth storytelling experience for visitors.
 
-### Desktop View
-![Mavon Hero Section - Desktop](./screenshots/hero-section.png)
+---
 
-### Mobile View
-![Mavon Hero Section - Mobile](./screenshots/hero-section-mobile.png)
+## ✨ Features & Cool Animations
 
-## ✨ Features
+### 🌌 1. Magnet Hero Portrait & Navbar
+- **Interactive Mouse Tracking**: A custom magnet effect wraps the main portrait, following the user's cursor dynamically with smooth ease-out and ease-in-out transitions.
+- **Micro-Animations**: Key layout elements (Navbar links, Hero text, and CTA buttons) use custom entry animations with fine-tuned delays.
 
-- **Modern & Dynamic UI**: Smooth animations using Framer Motion and custom CSS micro-interactions.
-- **Premium Hero Section**: High-impact typography with looping background animations and clean edge gradients.
-- **Responsive Layouts**: Fully optimized for mobile, tablet, and desktop viewing experiences.
-- **Fast Performance**: Built on top of Vite and TypeScript with strict type checking and linting.
+### 📼 2. Infinite Loop Scroll Marquee
+- **Passive Scroll-Driven Motion**: Multi-row horizontal marquee populated with premium 3D motion graphic loops.
+- **Dual-Direction Translation**: Scrolling down translates the top row rightwards and the bottom row leftwards at a multiplier speed of `0.3`, producing a dynamic parallax speed effect.
 
-## 🖥️ Running Servers & Getting Started
+### 🎭 3. Character-by-Character Scroll Reveal
+- **Opacity Fade-in**: The "About Me" paragraph reveals text character-by-character as you scroll.
+- **Scroll Tracking**: Driven by viewport scroll hooks, opacity goes from `0.2` to `1.0` dynamically as the content moves into focus.
 
-We provide multiple server commands for local development, mobile testing, and production previews. For full server documentation, see our dedicated **[Server & Local Environment Guide (SERVER_GUIDE.md)](./SERVER_GUIDE.md)**.
+### 🛠️ 4. Premium Services Showcase
+- **Glassmorphism Borders**: Minimalist vertical service layout with transparent borders and clean grid typography.
+- **Staggered Entrance**: Service items fade in sequentially with clean time offsets.
 
-### Quick Server Command Table
+### 🗂️ 5. Sticky Stack Card Parallax (3D Stacking)
+- **Overlap & Stacking**: Three premium project cards stack directly on top of each other as you scroll down.
+- **Viewport Height Constraint**: Auto-adapts card layouts and scales (`max-h-[calc(100vh-180px)]`) to fit beautifully on any screen height (e.g., short viewports like `596px`) without cutting cards in half.
+- **Parallax Scaling**: Cards scale down slightly as they get layered underneath new cards, keeping the visual hierarchy pristine.
 
-| Command | Server Type | Default URL | Description |
-| :--- | :--- | :--- | :--- |
-| `npm run dev` | Development Server (HMR) | `http://localhost:5173` | Hot-reloading development server |
-| `npm run dev -- --host` | Network Dev Server | `http://<your-ip>:5173` | Test on mobile devices on the same Wi-Fi |
-| `npm run build` | Production Builder | `dist/` | Compiles production-optimized bundle |
-| `npm run preview` | Production Preview Server | `http://localhost:4173` | Locally test the compiled production build |
+---
 
-### Quickstart Example
+## 🛠️ Technology Stack
 
-1. **Install Dependencies**
-   ```bash
-   npm install
-   ```
+- **Framework**: [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **Programming Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
-2. **Start Development Server**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
+---
 
+## 🖥️ Getting Started & Local Development
 
+### 1. Installation
+Clone the repository and install the dependencies:
+```bash
+npm install
+```
+
+### 2. Run the Development Server
+Start Vite with hot module replacement (HMR):
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### 3. Production Build
+Compile and build the application for deployment:
+```bash
+npm run build
+```
+Preview the production build locally:
+```bash
+npm run preview
+```
+
+---
+
+## 📂 Project Structure
+
+```
+├── src/
+│   ├── components/       # Reusable components (Magnet, FadeIn, AnimatedText, Buttons)
+│   ├── sections/         # Landing page sections (Hero, Marquee, About, Services, Projects, Contact)
+│   ├── assets/           # Local styling and image assets
+│   ├── App.tsx           # Application layout assembler
+│   └── main.tsx          # Application entry point
+```
+
+---
+
+*Crafted with 🖤 for Jack's 3D Creative Portfolio.*

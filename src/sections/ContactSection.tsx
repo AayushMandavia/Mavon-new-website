@@ -84,7 +84,9 @@ export const ContactSection = () => {
               Email Us
             </span>
             <a 
-              href="mailto:mavontechsolutions@gmail.com" 
+              href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJfnbnSMgFJtLDsTnkcMMNHnwXHzDfhxHmvbtTwMjNnhJgzRbjMGQGlSDQhLNZSltvdCwQV" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-base sm:text-lg md:text-xl font-semibold text-[#D7E2EA] hover:opacity-80 transition-opacity break-all text-center"
             >
               mavontechsolutions@gmail.com

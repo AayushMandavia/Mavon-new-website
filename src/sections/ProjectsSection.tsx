@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { FadeIn } from '../components/FadeIn';
 import { RainbowButton } from '@/components/ui/rainbow-button';
 
@@ -44,30 +44,38 @@ const PROJECTS = [
   }
 ];
 
-const ProjectCard = ({ project, index, totalCards }: { project: any, index: number, totalCards: number }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Scale down from 1.0 to targetScale as we scroll past
+const ProjectCard = ({ 
+  project, 
+  index, 
+  totalCards, 
+  progress 
+}: { 
+  project: any; 
+  index: number; 
+  totalCards: number; 
+  progress: MotionValue<number>; 
+}) => {
   const targetScale = 1 - (totalCards - 1 - index) * 0.03;
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end start']
-  });
+  const range = [index * 0.25, 1];
+  const scale = useTransform(progress, range, [1, targetScale]);
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
+  const stickyTop = `calc(clamp(2rem, 5vw, 4rem) + ${index * 28}px)`;
+  const wrapperHeight = `calc(100vh - (clamp(2rem, 5vw, 4rem) + ${index * 28}px))`;
 
   return (
     <div 
-      ref={containerRef} 
-      className="relative h-[85vh] flex items-start justify-center w-full max-w-5xl mx-auto"
+      style={{
+        top: stickyTop,
+        height: wrapperHeight,
+      }}
+      className="sticky flex items-center justify-center w-full max-w-5xl mx-auto origin-top"
     >
       <motion.div
         style={{
           scale,
-          // Offset each card slightly when stacked
-          top: `calc(clamp(5rem, 10vw, 7rem) + ${index * 28}px)`,
+          transformOrigin: 'top',
         }}
-        className="sticky w-full h-[540px] sm:h-[600px] md:h-[660px] rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col justify-between gap-4 sm:gap-6 overflow-hidden"
+        className="w-full h-[540px] sm:h-[600px] md:h-[660px] max-h-[calc(100vh-180px)] rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-4 sm:p-6 md:p-8 flex flex-col justify-between gap-4 sm:gap-6 overflow-hidden"
       >
         {/* Top Row */}
         <div className="flex justify-between items-center w-full border-b border-[#D7E2EA]/10 pb-4">
@@ -139,6 +147,12 @@ const ProjectCard = ({ project, index, totalCards }: { project: any, index: numb
 };
 
 export const ProjectsSection = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end']
+  });
+
   return (
     <section 
       id="projects" 
@@ -157,9 +171,15 @@ export const ProjectsSection = () => {
       </FadeIn>
 
       {/* Cards List */}
-      <div className="relative flex flex-col gap-20">
+      <div ref={containerRef} className="relative flex flex-col gap-20">
         {PROJECTS.map((project, i) => (
-          <ProjectCard key={i} project={project} index={i} totalCards={PROJECTS.length} />
+          <ProjectCard 
+            key={i} 
+            project={project} 
+            index={i} 
+            totalCards={PROJECTS.length} 
+            progress={scrollYProgress}
+          />
         ))}
       </div>
     </section>
