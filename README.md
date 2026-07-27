@@ -80,5 +80,3 @@ npm run preview
 ```
 
 ---
-
-*Crafted with 🖤 for Jack's 3D Creative Portfolio.*
